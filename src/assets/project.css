@@ -1,0 +1,88 @@
+@media only screen and (max-width: 775px) {
+  .profile-section {
+    flex-wrap: wrap;
+  }
+  .quote {
+    display: none;
+  }
+  .contact-btn {
+    display: none;
+  }
+}
+
+
+.projects-container {
+  margin-bottom: 50px;
+  cursor: grab;
+  overflow: auto;
+}
+
+
+.projects-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .custom-card {
+    flex: 0 0 auto;
+    margin-right: 16px;
+    width: 320px;
+    scroll-snap-align: start;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 400px;
+    padding-top: 300px;
+    background-position: center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    transition: background-position-y 0.4s ease-in-out,
+    padding-top 0.4s ease-in-out;
+    background-color: #1f1919;
+  }
+  
+  .card-content {
+    position: relative;
+    padding: 16px;
+    color: #fff;
+  }
+  
+  .card-title {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .card-description, .cardButton {
+    margin-top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-color: rgba(0, 0, 0, 0.767) !important;
+  }
+
+  .cardButton {
+    margin-top: 10px !important;
+    text-align: center;
+  }
+  
+  .custom-card:hover {
+    padding-top: 40px;
+    background-position-y: -1px;
+  }
+  
+  .custom-card:hover .card-description,
+  .custom-card:hover .cardButton {
+    opacity: 1;
+  }
+  
+  .button {
+    margin-top: 16px;
+  }
+  

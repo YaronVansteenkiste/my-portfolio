@@ -1,38 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 .App {
-  text-align: center;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.about-container {
+  flex: 1;
 }
 
-.App-header {
-  background-color: #282c34;
+.profile-bio {
+  width: 100%;
+}
+
+.profile-pic-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo {
+  z-index: 1;
+  width: 15em;
+  border-radius: 50%;
+}
+
+.square{
+  position: absolute;
+  height: 10em;
+  width: 10em;
+  background-color: #ecbd3f;
+  border-radius: 100%;
+}
+
+.top-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: left;
+  background-color: #222;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.greeting {
+  color: rgb(185, 185, 185);
+  font-size: 2em;
+}
+
+.name {
   color: white;
+  font-size: 4em;
 }
 
-.App-link {
-  color: #61dafb;
+.function {
+  font-size: 1.8rem;
+  color: #ecbd3f;
+  margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.quote {
+  font-size: 1rem;
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.button {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.separator {
+  background-color: #f3f3f3;
+  height: 10px;
+}
+
+.contact-btn {
+  background-color: rgb(236, 195, 63);
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  font-size: 1.2em;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.skills-container h2,
+.projects-container h2{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.skills-container h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.skills-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+
+.skills-container li {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.skills-container .row {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 400px) {
+  .quote {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 334px) {
+  .profilepic-container {
+    display: none;
   }
+
 }
