@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './skills.css'
 
 const languages = [
   'Javascript',
@@ -26,7 +27,7 @@ const databases = ['MongoDB', 'PostgreSQL', 'noSQL'];
 
 export function SkillSection() {
   return (
-    <div id='skills-container' className="skills-container container text-center mt-5">
+    <div id='skills-container' className="section-container container text-center mt-5">
       <div className="row">
         <div className="col">
           <h2>My Areas of Expertise</h2>
@@ -35,7 +36,7 @@ export function SkillSection() {
       <div className="row">
         <div className="col">
           <h3>Languages</h3>
-          <ul>
+          <ul className="animated-list">
             {languages.map((language) => (
               <li key={language}>{language}</li>
             ))}
@@ -43,7 +44,7 @@ export function SkillSection() {
         </div>
         <div className="col">
           <h3>Frameworks</h3>
-          <ul>
+          <ul className="animated-list">
             {frameworks.map((framework) => (
               <li key={framework}>{framework}</li>
             ))}
@@ -51,7 +52,7 @@ export function SkillSection() {
         </div>
         <div className="col">
           <h3>Databases</h3>
-          <ul>
+          <ul className="animated-list">
             {databases.map((database) => (
               <li key={database}>{database}</li>
             ))}

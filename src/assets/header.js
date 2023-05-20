@@ -46,7 +46,7 @@ export function NavigationBar() {
   };
 
   return (
-    <Navbar className='bg-dark' variant="dark">
+    <Navbar bg='black' variant="dark" className="fixed-top position-static">
       <Nav className="w-100 justify-content-end navigationbar">
         <Nav.Link active={selected === "about"} onClick={() => handleClick("about")}>About</Nav.Link>
         <Nav.Link active={selected === "skills"} onClick={() => handleClick("skills")}>Skills</Nav.Link>

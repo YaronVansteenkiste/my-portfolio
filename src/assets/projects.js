@@ -96,12 +96,12 @@ export function ProjectsSection() {
   return (
     <div
       id='projects-container'
-      className="projects-container container text-center mt-5"
+      className="projects-container section-container container text-center mt-5"
       ref={containerRef}
     >
       <div className="row">
         <div className="col">
-          <h2>My Projects</h2>
+          <h2>Check Out My Awesome Projects!</h2>
         </div>
       </div>
       <div className="projects-wrapper" ref={wrapperRef}>

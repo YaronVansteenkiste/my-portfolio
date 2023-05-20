@@ -6,15 +6,30 @@ import { TypeAnimation } from 'react-type-animation';
 import { NavigationBar } from './assets/header';
 import { SkillSection } from './assets/skills';
 import profilePhoto from './assets/profile.png';
-import anime from 'animejs/lib/anime.es.js';
 import { ProjectsSection } from './assets/projects';
 import { Footer } from './assets/footer';
+import { SocialsSection } from './assets/socials';
+import anime from 'animejs';
 
-function App() {
+const App = () => {
   const profilePhotoRef = useRef(null);
   const profileBackPhotoRef = useRef(null);
+  const canvasRef = useRef(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const sentence = '飯ぶりづざ取足式ッ稿1著ニ棋側要メキレソ菱営リ止安はをふ見年ゃだょあ構質カセヲ山視えば原';
+    const letters = sentence.split('');
+
+    let fontSize = 10;
+    const columns = canvas.width / fontSize
+
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;
       const centerX = window.innerWidth / 2;
@@ -27,7 +42,7 @@ function App() {
         translateX: moveX * 6,
         translateY: moveY * 6,
         easing: 'easeOutQuad',
-        duration: 500
+        duration: 500,
       });
 
       anime({
@@ -35,38 +50,73 @@ function App() {
         translateX: moveX * 2,
         translateY: moveY * 2,
         easing: 'easeOutQuad',
-        duration: 500
-      })
+        duration: 500,
+      });
+    };
+
+    let drops = [];
+    for (let i = 0; i < columns; i++) {
+      drops[i] = 1;
+    }
+
+    const draw = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      drops.forEach((drop, i) => {
+        let text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillStyle = '#ffc107ba';
+        ctx.fillText(text, i * fontSize, drop * fontSize);
+        drops[i]++;
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
+          drops[i] = 0;
+        }
+      });      
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+
+    intervalRef.current = setInterval(draw, 33);
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      clearInterval(intervalRef.current);
     };
   }, []);
 
+  const handleClick = () => {
+    document.getElementById('socials-container').scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="App">
       <NavigationBar />
-      <header id='profileheader' className="profileheader top-header text-white py-5">
+      <header id="profileheader" className="profileheader top-header text-white py-5">
+        <div className="canvas-container">
+          <canvas ref={canvasRef} id="c"></canvas>
+        </div>
         <section className="profile-section">
-          <div id='about-container' className="about-container">
+          <div id="about-container" className="about-container">
             <div className="profile-bio">
               <h3 className="greeting">Hi there 👋, I'm</h3>
-              <TypeAnimation className='name' sequence={[
-                'Yaron',
-                1000,
-              ]}
+              <TypeAnimation
+                className="name"
+                sequence={['Yaron', 2000, ' ', 100]}
                 wrapper="span"
                 cursor={true}
                 repeat={Infinity}
               ></TypeAnimation>
-              <h3 className="function" id='profile-function'>Designer & Fullstack Developer</h3>
+              <h3 className="function" id="profile-function">
+                Designer & Fullstack Developer
+              </h3>
               <p className="quote">
-                I am an experienced and dedicated fullstack developer and designer, driven by a genuine passion for crafting exceptional web applications. With a solid foundation in both front-end and back-end development, I possess the necessary skills and knowledge to bring innovative ideas to life.
+                I am an experienced and dedicated fullstack developer and designer, driven by a genuine passion for
+                crafting exceptional web applications. With a solid foundation in both front-end and back-end development,
+                I possess the necessary skills and knowledge to bring innovative ideas to life.
               </p>
-              <Button variant="warning" size="lg" className="contact-btn">CONTACT ME</Button>
+              <Button onClick={handleClick} variant="warning" size="lg" className="contact-btn">
+                CONTACT ME
+              </Button>
             </div>
           </div>
           <div className="profile-pic-container">
@@ -81,7 +131,7 @@ function App() {
       <ProjectsSection />
       <div className="separator"></div>
       <div id="socials-container"></div>
-      socials
+      <SocialsSection />
       <div className="separator"></div>
       <Footer />
     </div>
