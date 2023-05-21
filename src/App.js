@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { TypeAnimation } from 'react-type-animation';
 import { NavigationBar } from './assets/header';
 import { SkillSection } from './assets/skills';
-import profilePhoto from './assets/profile.png';
+import profilePhoto from './assets/profile.webp';
 import { ProjectsSection } from './assets/projects';
 import { Footer } from './assets/footer';
 import { SocialsSection } from './assets/socials';

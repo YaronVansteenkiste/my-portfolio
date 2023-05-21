@@ -49,6 +49,7 @@ canvas {display: block; width: 100%; height: 100%}
 .profile-photo {
   z-index: 1;
   width: 20em;
+  height: 20em;
   border-radius: 50%;
 }
 
