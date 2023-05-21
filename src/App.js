@@ -119,14 +119,14 @@ const App = () => {
                   CONTACT ME
                 </Button>
                 <div style={{marginLeft: '20px'}}>
-                <a href="mailto:yaron.vansteenkiste@telenet.be" target="_blank">Or send me an email.</a>
+                <a href="mailto:yaron.vansteenkiste@telenet.be" target="_blank" rel="noreferrer">Or send me an email.</a>
                 </div>
               </div>
             </div>
           </div>
           <div className="profile-pic-container">
-            <img src={profilePhoto} className="profile-photo" alt="profile-photo" ref={profilePhotoRef} />
-            <img className="square" ref={profileBackPhotoRef}></img>
+            <img src={profilePhoto} className="profile-photo" alt="Front Profile" ref={profilePhotoRef} />
+            <img className="square" ref={profileBackPhotoRef} alt="background"></img>
           </div>
         </section>
       </header>
