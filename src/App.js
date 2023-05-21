@@ -126,7 +126,7 @@ const App = () => {
           </div>
           <div className="profile-pic-container">
             <img src={profilePhoto} className="profile-photo" alt="Front Profile" ref={profilePhotoRef} />
-            <img className="square" ref={profileBackPhotoRef} alt="background"></img>
+            <img className="square" ref={profileBackPhotoRef}></img>
           </div>
         </section>
       </header>
