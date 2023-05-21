@@ -24,7 +24,7 @@ const App = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const sentence = '飯ぶりづざ取足式ッ稿1著ニ棋側要メキレソ菱営リ止安はをふ見年ゃだょあ構質カセヲ山視えば原';
+    const sentence = 'ジフルワーロイアドズルジズドフルブキャドフゴプキャエッジドズルクフグズ・ドット・ジャエフホッキー・スリー・';
     const letters = sentence.split('');
 
     let fontSize = 10;
@@ -71,7 +71,7 @@ const App = () => {
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
           drops[i] = 0;
         }
-      });      
+      });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -114,9 +114,14 @@ const App = () => {
                 crafting exceptional web applications. With a solid foundation in both front-end and back-end development,
                 I possess the necessary skills and knowledge to bring innovative ideas to life.
               </p>
-              <Button onClick={handleClick} variant="warning" size="lg" className="contact-btn">
-                CONTACT ME
-              </Button>
+              <div style={{display: 'inline-flex', alignItems: 'baseline'}}>
+                <Button onClick={handleClick} variant="warning" size="lg" className="contact-btn">
+                  CONTACT ME
+                </Button>
+                <div style={{marginLeft: '20px'}}>
+                <a href="mailto:yaron.vansteenkiste@telenet.be" target="_blank">Or send me an email.</a>
+                </div>
+              </div>
             </div>
           </div>
           <div className="profile-pic-container">
