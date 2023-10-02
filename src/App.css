@@ -10,6 +10,7 @@ canvas {display: block; width: 100%; height: 100%}
 
 .profileheader {
   position: relative;
+  padding: 20px;
 }
 
 .canvas-container {
@@ -53,13 +54,7 @@ canvas {display: block; width: 100%; height: 100%}
   border-radius: 50%;
 }
 
-.square{
-  position: absolute;
-  height: 15em;
-  width: 15em;
-  background-color: #ecbd3f;
-  border-radius: 100%;
-}
+
 
 .top-header {
   min-height: 100vh;
